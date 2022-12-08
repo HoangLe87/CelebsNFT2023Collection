@@ -4,10 +4,14 @@ const main = async () => {
   const celebsNFT = await celebsNFTContract.deploy();
   await celebsNFT.deployed();
   console.log("celebsNFT contract deployed to address: ", celebsNFT.address);
-  console.log("=== calling safeMint function ===");
-  let txn1 = await celebsNFT.safeMint();
+  console.log("=== calling makeNFT function ===");
+  let txn1 = await celebsNFT.makeNFT();
   await txn1.wait();
-  console.log("Minting done.");
+  console.log("Minting tnx1 done.");
+  console.log("=== calling makeNFT function ===");
+  let txn2 = await celebsNFT.makeNFT();
+  await txn2.wait();
+  console.log("Minting tnx2 done.");
 };
 
 const runMain = (async () => {
