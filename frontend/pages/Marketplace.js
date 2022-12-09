@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Header from "./components/Header";
 import styles from "../styles/Home.module.css";
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState } from "react";
+import Cards from "./components/Cards";
 
-const Home = () => {
-  // check if metamask is installed
+const Marketplace = () => {
+  // check if wallet is connected on page load
   const [currentAccount, setCurrentAccount] = useState("");
   const [NFTs, setNFTs] = useState([]);
 
@@ -52,7 +53,6 @@ const Home = () => {
     checkIfWalletIsConnected();
     fetchNFTs();
   }, []);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -60,13 +60,12 @@ const Home = () => {
         <meta name="description" content="NFT Collection 2023" />
       </Head>
       <Header currentAccount={currentAccount} connectWallet={connectWallet} />
-
       <main className={styles.main}>
-        Each unique. Each beautiful. Discover your NFT today.
+        <Cards nfts={NFTs} />
       </main>
       <footer className={styles.footer}>CelebsNFT © 2023</footer>
     </div>
   );
 };
 
-export default Home;
+export default Marketplace;
