@@ -2,6 +2,9 @@ import Head from "next/head";
 import Header from "./components/Header";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import { Canvas } from "@react-three/fiber";
+import AnimatedSphere from "./components/AnimatedSphere";
+import { OrbitControls } from "@react-three/drei";
 
 const Home = () => {
   const router = useRouter();
@@ -33,7 +36,13 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div>image</div>
+          <div>
+            <Canvas className={styles.canvas}>
+              <ambientLight intensity={0.3} />
+              <directionalLight intensity={1} />
+              <OrbitControls enableZoom={false} />
+            </Canvas>
+          </div>
         </div>
       </main>
       <footer className={styles.footer}>CelebsNFT © 2023</footer>

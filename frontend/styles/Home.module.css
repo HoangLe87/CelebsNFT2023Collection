@@ -67,11 +67,16 @@
   justify-content: center;
   align-items: center;
   margin: 1rem;
+
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.canvas {
+ background-color: red;
 }
 
 .cardsDisplay {
