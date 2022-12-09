@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 import Cards from "./components/Cards";
 
 const Marketplace = () => {
-  // check if wallet is connected on page load
-  const [currentAccount, setCurrentAccount] = useState("");
   const [NFTs, setNFTs] = useState([]);
 
+  // fetch API function
   const fetchNFTs = async () => {
     let nfts;
     const fetchURL = `/api/fetchNFTs`;
@@ -18,50 +17,24 @@ const Marketplace = () => {
     setNFTs(nfts.ownedNfts);
   };
 
-  const checkIfWalletIsConnected = async () => {
-    const { ethereum } = window;
-    if (!ethereum) {
-      console.log("Please install metamask");
-      return;
-    } else {
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-      if (accounts.length > 0) {
-        let account = accounts[0];
-        setCurrentAccount(account);
-      } else console.log("No authorized account found");
-    }
-  };
-  // connect to the wallet function
-  const connectWallet = async () => {
-    try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        alert("Get MetaMask!");
-        return;
-      }
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      setCurrentAccount(accounts[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // check if wallet is connected on page load
+  // fetch API from own api
   useEffect(() => {
-    checkIfWalletIsConnected();
     fetchNFTs();
   }, []);
+
   return (
     <div className={styles.container}>
       <Head>
         <title>CelebsNFT</title>
         <meta name="description" content="NFT Collection 2023" />
       </Head>
-      <Header currentAccount={currentAccount} connectWallet={connectWallet} />
+      <Header />
       <main className={styles.main}>
-        <Cards nfts={NFTs} />
+        <h1>NFT for SALE</h1>
+        <p>Buy the bellow pieces on OpenSea</p>
+        <div className={styles.cardsDisplay}>
+          <Cards nfts={NFTs} />
+        </div>
       </main>
       <footer className={styles.footer}>CelebsNFT © 2023</footer>
     </div>

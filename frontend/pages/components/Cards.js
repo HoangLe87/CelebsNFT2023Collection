@@ -2,11 +2,15 @@ import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 
 const Cards = ({ nfts }) => {
-  console.log(nfts);
+  const buyNft = (id) => {
+    const link = `https://testnets.opensea.io/assets/goerli/0x919be4c3be64fe850e758caa893bc8cbb52e0982/${id}`;
+    window.open(link);
+  };
+
   return nfts.map((i) => {
     return (
       <div className={styles.cards} key={nfts.indexOf(i)}>
-        <div>
+        <div className={styles.cardHeader}>
           {i.contractMetadata.name} {nfts.indexOf(i)}
         </div>
         <Image
@@ -16,7 +20,12 @@ const Cards = ({ nfts }) => {
           alt="ntf image"
         />
         <div className={styles.buyButtonDiv}>
-          <button className={styles.buyButton}>Buy</button>
+          <button
+            className={styles.buyButton}
+            onClick={() => buyNft(nfts.indexOf(i))}
+          >
+            Buy
+          </button>
         </div>
       </div>
     );

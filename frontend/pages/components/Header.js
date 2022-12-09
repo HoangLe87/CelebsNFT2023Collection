@@ -2,8 +2,28 @@ import logo from "../../public/static/images/logo.png";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import WalletContext from "./WalletContext";
 
-const Header = ({ currentAccount, connectWallet }) => {
+const Header = () => {
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) {
+        alert("Get MetaMask!");
+        return;
+      }
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setCurrentAccount(accounts[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const [currentAccount, setCurrentAccount] = useContext(WalletContext);
+
   const router = useRouter();
   return (
     <header className={styles.header}>

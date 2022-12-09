@@ -1,12 +1,13 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .header {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 1px 30px 10px black;
 }
 
 .navLogo {
@@ -41,13 +42,21 @@
   margin: 0;
 }
 
-.connectButton {
-  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
-  background-color: darkslateblue;
-  border-radius: 5px;
-  border-color: rgb(83, 80, 80);
-  box-shadow: 1px solid black;
+.connectButton, .mintButton, .messageButton, .buyButton {
+  padding: .5rem 3rem;
+  border-radius: 100rem;
+  border: solid 3px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 500px 1px #fff inset;
   font-size: bold;
+  color: black;
+  margin: 1rem;
+}
+
+.buyButton {
+  margin: 0.5rem
 }
 
 .main {
@@ -60,12 +69,23 @@
   margin: 1rem;
 }
 
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cardsDisplay {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .footer {
   display: flex;
   padding: 1rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 -1px 30px 10px black;
 }
 
 .cards {
@@ -93,24 +113,31 @@
 }
 
 
-.buyButton {
-  width: 4rem;
-  height: 1.5rem;
-  background-color: darkslateblue;
-  border-radius: 5px;
-  border-color: rgb(83, 80, 80);
-  box-shadow: 1px solid black;
-  font-size: bold;
-  margin: 0.5rem;
-}
-
-.buyButton:hover {
-  transform: scale(1.1);
+.buyButton:hover, .mintButton:hover, .messageButton:hover  {
   cursor: pointer;
+  box-shadow: none;
+  color: white;
 }
 
-.buyButton:active {
+.buyButton:active, .mintButton:active, .messageButton:active  {
   transform: scale(0.8);
+}
+
+#message {
+  border-radius: 5px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 1rem;
+  width: 200px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 2px black;
+  color: black
+}
+
+.message {
+  background: -webkit-linear-gradient(rgb(0, 162, 255), rgb(255, 0, 157));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: large;
 }
 
 @media (max-width: 600px) {
