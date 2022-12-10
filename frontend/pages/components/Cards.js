@@ -7,7 +7,7 @@ const Cards = ({ nfts }) => {
     window.open(link);
   };
 
-  return nfts.map((i) => {
+  return nfts?.map((i) => {
     return (
       <div className={styles.cards} key={nfts.indexOf(i)}>
         <div className={styles.cardHeader}>
