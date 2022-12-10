@@ -29,7 +29,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.navLogo}>
         <Image src={logo} className={styles.logo} alt="logo" />
-        <p><span className={styles.heroTitle}>CelebsNFT</span></p>
+        <div className={styles.heroTitle}>CelebsNFT</div>
       </div>
       <div>
         <ul className={styles.navbar}>
@@ -38,11 +38,11 @@ const Header = () => {
           <li onClick={() => router.push("/Marketplace")}>Marketplace</li>
           <li onClick={() => router.push("/Contacts")}>Contacts</li>
           {!currentAccount && (
-            <div>
+            <li>
               <button className={styles.connectButton} onClick={connectWallet}>
                 Connect
               </button>
-            </div>
+            </li>
           )}
         </ul>
       </div>

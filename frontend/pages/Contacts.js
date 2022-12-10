@@ -130,6 +130,7 @@ const Contacts = () => {
             Wave at me
           </button>
         </form>
+        <div>
         <button
           type="submit"
           className={styles.messageButton}
@@ -137,6 +138,7 @@ const Contacts = () => {
         >
           {seeAllMessages ? "Hide messages" : "See messages"}
         </button>
+        </div>
         <div className={styles.content}>
           {seeAllMessages &&
             allWaves.map((i) => {

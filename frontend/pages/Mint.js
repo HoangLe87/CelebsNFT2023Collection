@@ -45,14 +45,12 @@ const Mint = () => {
         <meta name="description" content="NFT Collection 2023" />
       </Head>
       <Header />
-      <main className={styles.main} id="main">
-        <h1>Mint your <span className={styles.heroTitle}>NFT</span></h1>
-        <div>Mint your own randomised NFT and send it to your wallet</div>
-        <div>
+      <main className={styles.mainMint} id="main">
+          <h1>Mint your <span className={styles.heroTitle}>NFT</span></h1>
+          <p>Mint your own randomised NFT and send it to your wallet</p>
           <button className={styles.mintButton} onClick={mintNft}>
             Mint
-          </button>
-        </div>
+          </button>       
       </main>
       <footer className={styles.footer}>CelebsNFT © 2023</footer>
     </div>
