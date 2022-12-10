@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import WalletContext from "./WalletContext";
+import {WalletContext} from "../_app";
 
 const Header = () => {
   const connectWallet = async () => {

@@ -1,10 +1,12 @@
 import "../styles/globals.css";
-import { useEffect, useState } from "react";
-import WalletContext from "./components/WalletContext";
+import { useEffect, useState, createContext } from "react";
+
+export const WalletContext = createContext()
 
 function MyApp({ Component, pageProps }) {
   // set metamask account
   const [currentAccount, setCurrentAccount] = useState("");
+
 
   // function to check if metamask is connected
   const checkIfWalletIsConnected = async () => {
