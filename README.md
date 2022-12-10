@@ -1,5 +1,7 @@
 # Celebs NFT 2023 collection
 
+<p>Click to see:<a href="https://celebs-nft-2023-collection-4l57.vercel.app/">NFT Squares Collection 2023</a>
+<img src='./sample.png'>
 
 ### To create png or jpeg NFT stored on thirdparty servers
 <p>=== Starting deploy ===</p>
@@ -25,4 +27,6 @@ Check on OpenSea: <a href="https://testnets.opensea.io/assets/goerli/0xc81a4214f
 <p> test app JSON string - data:application/json;base64,<p>
 <p> svg preview - https://www.svgviewer.dev/?utm_source=buildspace.so&utm_medium=buildspace_project </p>
 Check on OpenSea: <a href="https://testnets.opensea.io/assets/goerli/0x919bE4c3Be64fE850E758caa893bC8CBb52E0982/0">HERE</a><br>
+
+
 
