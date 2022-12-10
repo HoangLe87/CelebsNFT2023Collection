@@ -208,6 +208,15 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     text-align: center;
-
+  }
+  .cards {
+    justify-content: center;
+  }
+  .cardsDisplay {
+    margin: auto;
+  }
+  .navbar {
+    max-width: 200px;
+    overflow: auto;
   }
 }
