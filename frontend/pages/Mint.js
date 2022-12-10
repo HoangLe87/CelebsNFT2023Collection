@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Header from "./components/Header";
 import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import abi from "../public/static/nftAbi.json";
 
@@ -47,7 +46,7 @@ const Mint = () => {
       </Head>
       <Header />
       <main className={styles.main} id="main">
-        <h1>Mint your NFT</h1>
+        <h1>Mint your <span className={styles.heroTitle}>NFT</span></h1>
         <div>Mint your own randomised NFT and send it to your wallet</div>
         <div>
           <button className={styles.mintButton} onClick={mintNft}>

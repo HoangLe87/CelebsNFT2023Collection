@@ -118,7 +118,7 @@ const Contacts = () => {
       </Head>
       <Header />
       <main className={styles.main}>
-        <h1>Get in touch!</h1>
+        <h1>Get in <span className={styles.heroTitle}>touch!</span></h1>
         <p>Leave me a message on the blockchain by submitting the form below</p>
         <form onSubmit={wave}>
           <input

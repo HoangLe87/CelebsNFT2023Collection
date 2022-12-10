@@ -30,7 +30,7 @@ const Marketplace = () => {
       </Head>
       <Header />
       <main className={styles.main}>
-        <h1>NFT for SALE</h1>
+        <h1>NFT for <span className={styles.heroTitle}>SALE</span></h1>
         <p>Buy the bellow pieces on OpenSea</p>
         <div className={styles.cardsDisplay}>
           <Cards nfts={NFTs} />

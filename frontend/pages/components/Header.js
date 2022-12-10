@@ -29,7 +29,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.navLogo}>
         <Image src={logo} className={styles.logo} alt="logo" />
-        <p>CelebsNFT</p>
+        <p><span className={styles.heroTitle}>CelebsNFT</span></p>
       </div>
       <div>
         <ul className={styles.navbar}>

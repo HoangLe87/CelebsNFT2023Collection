@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { Canvas } from "@react-three/fiber";
-import AnimatedSphere from "./components/AnimatedSphere";
 import { OrbitControls } from "@react-three/drei";
+import AnimatedBox from "./components/AnimatedBox";
+import AnimatedText from "./components/AnimatedText";
 
 const Home = () => {
   const router = useRouter();
@@ -18,8 +19,7 @@ const Home = () => {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div>
-            {" "}
-            <h1>Welcome to CelebsNFT</h1>
+            <h1>Welcome to <span className={styles.heroTitle}>CelebsNFT</span></h1>
             <p>Each unique. Each beautiful. Discover your NFT today.</p>
             <div>
               <button
@@ -36,13 +36,12 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div>
             <Canvas className={styles.canvas}>
-              <ambientLight intensity={0.3} />
+              <ambientLight intensity={0.8} />
               <directionalLight intensity={1} />
               <OrbitControls enableZoom={false} />
+              <AnimatedBox/>
             </Canvas>
-          </div>
         </div>
       </main>
       <footer className={styles.footer}>CelebsNFT © 2023</footer>
